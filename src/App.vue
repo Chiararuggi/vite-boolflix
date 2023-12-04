@@ -1,8 +1,11 @@
 <script>
 import axios from "axios";
-import { store } from "./store.js";
+import { store } from "./store";
+import AppHeader from "./components/AppHeader.vue";
 export default {
-  components: {},
+  components: {
+    AppHeader,
+  },
 
   data() {
     return {
@@ -14,6 +17,8 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+    <AppHeader />
+</template>
 
 <style scoped></style>
