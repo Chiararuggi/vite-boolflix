@@ -4,21 +4,34 @@ export default {
   props: {
     info: Object,
   },
+
+  methods: {},
 };
 </script>
 
 <template>
-  <div class="card">
-    <p>{{ info.title }}</p>
-    <p>{{ info.original_title }}</p>
-    <p>{{ info.vote_count }}</p>
-    <p>{{ info.original_language }}</p>
-    <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" alt="imgNotFound" />
-  </div>
+    <div class="card">
+      <p>Titolo: {{ info.title }}</p>
+      <p>Titolo originale: {{ info.original_title }}</p>
+      <p>Voto: {{ info.vote_count }}</p>
+      <p>Lingua originale:</p>
+      <img
+        v-if="info.original_language != null"
+        :src="`/${info.original_language}.png`"
+      />
+      <img v-else src="/notFound.png" />
+      <img
+        v-if="info.poster_path != null"
+        :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`"
+      />
+      <img v-else src="/notFound.png" />
+    </div>
 </template>
 
 <style scoped>
 .card {
   color: black;
+  width: fit-content;
+  padding: 1rem;
 }
 </style>
