@@ -48,4 +48,6 @@ export default {
   <AppCard v-for="movie in store.movieList" :info="movie" />
 </template>
 
+
+
 <style scoped></style>
