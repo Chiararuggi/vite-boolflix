@@ -46,7 +46,6 @@ export default {
 <template>
   <AppSearch @search="getMovies()" />
   <AppCard v-for="movie in store.movieList" :info="movie" />
-  <p v-if="store.movieList.length == 0">No movies found</p>
 </template>
 
 <style scoped></style>

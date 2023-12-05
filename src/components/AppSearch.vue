@@ -3,6 +3,7 @@ import { store } from "../store.js"
 
 export default {
     name: "AppSearch",
+    //emits: ["search"],
     data() {
         return {
             store,
@@ -19,8 +20,10 @@ export default {
 </script>
 
 <template>
-    <input type="text" placeholder="Movie name" v-model="store.userInput">
-    <button @click="search">Find</button>
+    <div>
+        <input type="text" placeholder="Movie name" v-model="store.userInput">
+        <button @click="search">Find</button>
+    </div>
 </template>
 
 
